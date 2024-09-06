@@ -6,7 +6,6 @@ public class Main {
         int wylosowanaliczba = (int) (Math.random() * 100 + 1);
 
 
-
         //wczytywanie z klawiatury
         Scanner klawiatura = new Scanner(System.in);
         System.out.println("Podaj liczbę\n");
@@ -41,15 +40,32 @@ public class Main {
             default:
                 System.out.println("Słabo");
 
-        //wyrażenie switch                                  /////////////zrobić
-          for(int i = 0;i<10;i++){
-              System.out.println("Podaj liczbę");
-              wpisanaliczba = klawiatura.nextInt();
-              if(wpisanaliczba == wylosowanaliczba){
-                  System.out.println("Wygrana");
-                  break;
-              }
-          }
+                //wyrażenie switch                                  /////////////zrobić
+                for (int i = 0; i < 10; i++) {
+                    System.out.println("Podaj liczbę");
+                    wpisanaliczba = klawiatura.nextInt();
+                    if (wpisanaliczba == wylosowanaliczba) {
+                        System.out.println("Wygrana");
+                        break;
+                    }
+                }
+
+                //pętla while
+
+                do{
+                    System.out.println("Podaj liczbę");
+                    wpisanaliczba = klawiatura.nextInt();
+
+                    if (wpisanaliczba > wylosowanaliczba) {
+                        System.out.println("Wpisano za dużo");
+                    } else if (wpisanaliczba < wylosowanaliczba) {
+                        System.out.println("Wpisano za mało");
+                    } else {
+                        System.out.println("Wygrałeś");
+                    }
+                    System.out.println("Podaj liczbę");
+                    wpisanaliczba = klawiatura.nextInt();
+                }while (wpisanaliczba != wylosowanaliczba);
         }
     }
 }
