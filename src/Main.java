@@ -67,5 +67,23 @@ public class Main {
                     wpisanaliczba = klawiatura.nextInt();
                 }while (wpisanaliczba != wylosowanaliczba);
         }
+        //zad 2
+        String haslo= "";
+        String malelitery="qwertyuiopasdfghjklzxcvbnm";
+        String duzelitery="QWERTYUIOPASDFGHJKLZXCVBNM";
+        String znakispecjalne = "!@#$%^&*()_+-=[];',./{}:|<>?";
+        String cyfry = "1234567890";
+        int loshaslo;
+        for(int k = 0;k<10;k++) {
+            loshaslo = (int) (Math.random() * malelitery.length());
+            haslo = haslo + malelitery.charAt(loshaslo);
+            loshaslo = (int) (Math.random() * duzelitery.length());
+            haslo = haslo + duzelitery.charAt(loshaslo);
+            loshaslo = (int) (Math.random() * znakispecjalne.length());
+            haslo = haslo + znakispecjalne.charAt(loshaslo);
+            loshaslo = (int) (Math.random() * cyfry.length());
+            haslo = haslo + cyfry.charAt(loshaslo);
+        }
+        System.out.println("Wygenerowane hasło " + haslo);
     }
 }
