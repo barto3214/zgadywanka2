@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        int wylosowanaliczba = (int) (Math.random()*100+1);
-        System.out.println(wylosowanaliczba);
+        int wylosowanaliczba = (int) (Math.random() * 100 + 1);
+
 
 
         //wczytywanie z klawiatury
@@ -13,19 +13,19 @@ public class Main {
         int wpisanaliczba = klawiatura.nextInt();
 
         // instrukcja warunkowa
-        if(wpisanaliczba == wylosowanaliczba){
+        if (wpisanaliczba == wylosowanaliczba) {
             System.out.println("Wygrałeś");
         } else if (wpisanaliczba != wylosowanaliczba) {
             System.out.println("Nie trafiłeś");
         }
         //określić jak duża jest różnica między wyborem a wylosowanym
         //wyrażenie warunkowe != instrukcja warunkowa bo wyrażenie zwraca wartośc
-        int roznica = wpisanaliczba>wylosowanaliczba ? //takie {} w ifie
-                wpisanaliczba - wylosowanaliczba: // else if
-                wylosowanaliczba-wpisanaliczba;
-        System.out.println("Pomyłka o "+ roznica);
-        roznica = roznica/10;//dzielenie całkowite
-        switch (roznica){
+        int roznica = wpisanaliczba > wylosowanaliczba ? //takie {} w ifie
+                wpisanaliczba - wylosowanaliczba : // else if
+                wylosowanaliczba - wpisanaliczba;
+        System.out.println("Pomyłka o " + roznica);
+        roznica = roznica / 10;//dzielenie całkowite
+        switch (roznica) {
             case 0:
                 System.out.println("Bardzo blisko");
                 break;
@@ -40,6 +40,16 @@ public class Main {
                 break;
             default:
                 System.out.println("Słabo");
+
+        //wyrażenie switch                                  /////////////zrobić
+          for(int i = 0;i<10;i++){
+              System.out.println("Podaj liczbę");
+              wpisanaliczba = klawiatura.nextInt();
+              if(wpisanaliczba == wylosowanaliczba){
+                  System.out.println("Wygrana");
+                  break;
+              }
+          }
         }
     }
 }
